@@ -4,8 +4,10 @@ from xml.dom import minidom
 import csv
 import glob
 import matplotlib.pyplot as plt
+import matplotlib.figure
 import datetime
 import matplotlib.dates as mdates
+import os
 
 class dataset(object):
         time = []
@@ -57,3 +59,4 @@ for i in dataset().time:
 saveplot(dataset().distance,"distance")
 saveplot(dataset().colories,"colories")
 saveplot(dataset().walkEnd,"walkEnd[walk]")
+os.system("convert -append 2013distance.png 2013colories.png 2013walkEnd\[walk\].png ipodwalkingGraph.png")
